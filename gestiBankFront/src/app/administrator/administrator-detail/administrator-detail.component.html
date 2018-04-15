@@ -1,0 +1,48 @@
+<p>
+  administrator-detail works!
+</p>
+
+
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<section>
+				<form novalidate [formGroup] = "adminForm" (ngSubmit)="onSubmit()">
+					<fieldset>
+						<div class="form-group">
+							<label>Prenom</label>
+							<input type="text" class="form-control" formControlName="prenom">
+						</div>
+						<div class="form-group">
+							<label>Email</label>
+							<input type="email" class="form-control" formControlName="email">
+						
+						<div class="form-group">
+							<label>Pseudo</label>
+							<input type="text" class="form-control" formControlName="username">	
+						</div>
+						
+						<div class="form-group">
+							<label>Mot de passe</label>
+							<input type="text" class="form-control" formControlName="pwd">	
+						</div>
+							
+						<div class="form-group">
+							<label>Adresse</label>
+							<input type="text" class="form-control" formControlName="address">	
+						</div>
+						<div class="form-group">
+							<label>Telephone</label>
+							<input type="text" class="form-control" formControlName="numTel">	
+						</div>
+					</div>
+					</fieldset>
+					<button type="submit" class="btn btn-primary" [disabled]="!adminForm.valid">Submit</button>
+					<button type="button" class="btn btn-warning" (click)="redirectAdminPage()">Cancel</button>
+					<pre>{{adminForm.value | json}}</pre>
+				</form>
+			</section>
+		</div>
+	</div>
+</div>
+

@@ -1,0 +1,53 @@
+<p>
+  administrator-list works!
+</p>
+
+<div class="row">
+	<div class="col">
+		<section>
+			<header class="header">
+				<div class="row">
+					<div class="col-md-4">
+						<h1>Liste des Administrateurs</h1>
+					</div>
+					<div class="col-md-6">
+					</div>
+					<div class="col-md-2">	
+						<button type="button" class="btn btn-primary" (click)="redirectNewAdminPage()">New Administrator</button>
+					</div>
+				</div>
+			</header>
+		</section>
+		<section class="main">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Prenom</th>
+						<th>Email</th>
+						<th>Pseudo</th>
+						<th>Mot de passe</th>
+						<th>Adresse</th>
+						<th>Telephone</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let administrator of administrators">
+						<th scope="row">{{administrator.id}}</th>
+						<td>{{administrator.prenom}}</td>
+						<td>{{administrator.email}}</td>
+						<td>{{administrator.username}}</td>
+						<td>{{administrator.pwd}}</td>
+						<td>{{administrator.address}}</td>
+						<td>{{administrator.numTel}}</td>
+						<td>
+							<button type="button" class="btn btn-danger" (click)="deleteAdmin(administrator)">Delete</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+	</div>
+	
+</div>
+
