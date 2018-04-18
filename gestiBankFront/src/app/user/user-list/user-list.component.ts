@@ -39,7 +39,6 @@ export class UserListComponent implements OnInit {
   editUserPage(user: User){
     if (user) {
       this.router.navigate(['/user/edit',user.id]);
-      
     }
   }
 

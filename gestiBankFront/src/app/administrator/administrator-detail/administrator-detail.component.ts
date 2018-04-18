@@ -52,6 +52,7 @@ export class AdministratorDetailComponent implements OnInit, OnDestroy {
                               this.adminForm.controls['pwd'].value,
                               this.adminForm.controls['address'].value,
                               this.adminForm.controls['numTel'].value,
+                              null,
                               null);
     this.administratorService.saveAdministrator(administrator).subscribe(value=>this.redirectAdminPage());
 

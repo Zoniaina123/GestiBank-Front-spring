@@ -7,12 +7,13 @@ export class User {
 	pwd: string;
 	address: string;
 	numTel: string;
+  role: string;
 
 	
 
 	
 	constructor(id: number, prenom: string, email: string,
-    username: string, pwd: string, address: string, numTel: string) {
+    username: string, pwd: string, address: string, numTel: string, role: string) {
 		this.id = id;
 		this.prenom = prenom;
 		this.email = email;
@@ -20,6 +21,7 @@ export class User {
 		this.pwd = pwd;
 		this.address = address;
 		this.numTel = numTel;
+    this.role = role;
 
 	}
 }

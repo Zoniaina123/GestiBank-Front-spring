@@ -11,7 +11,7 @@ export class VisitorService {
 
   private apiUrl = 'http://localhost:8080/GestiBank/visitor/';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: Http) { }
 
   findAllVisitors():Observable<Visitor[]> {
     return this.http.get(this.apiUrl)
@@ -19,8 +19,8 @@ export class VisitorService {
     .catch((error:any)=>Observable.throw(error.json().error || 'Server error'));
   }
 
-  findById(id: number): Observable<Visitor> {
-    return this.http.get(this.apiUrl+'/'+id)
+  findAllAffectedVisitor(affect: number): Observable<Visitor[]> {
+    return this.http.get(this.apiUrl+'/affectation/'+affect)
     .map((res:Response) => res.json())
     .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
@@ -37,8 +37,8 @@ export class VisitorService {
   
   }
 
-  updateVisitor(visitor: Visitor): Observable<Visitor> {
-    return this.http.put(this.apiUrl+'/'+ visitor.id, visitor)
+  updateVisitor(id: number,visitor: Visitor): Observable<Visitor> {
+    return this.http.put(this.apiUrl+'/'+id,visitor)
     .map((res:Response) => res.json())
     .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
 

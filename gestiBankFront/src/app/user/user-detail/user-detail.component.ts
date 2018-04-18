@@ -71,7 +71,7 @@ export class UserDetailComponent implements OnInit, OnDestroy {
                               null,
                               null,
                               this.userForm.controls['address'].value,
-                              this.userForm.controls['numTel'].value);
+                              this.userForm.controls['numTel'].value, null);
 		this.userService.updateUser(user).subscribe(value=>this.redirectUserPage());
 
   // create User with form
@@ -82,7 +82,7 @@ export class UserDetailComponent implements OnInit, OnDestroy {
                               null,
                               null,
                               this.userForm.controls['address'].value,
-                              this.userForm.controls['numTel'].value);
+                              this.userForm.controls['numTel'].value, null);
 		this.userService.saveUser(user).subscribe(value=>this.redirectUserPage());
 
 	}

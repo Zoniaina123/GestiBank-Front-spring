@@ -1,3 +1,58 @@
 <p>
   conseiller-list works!
 </p>
+
+
+<div class="row">
+	<div class="col">
+		<section>
+			<header class="header">
+				<div class="row">
+					<div class="col-md-4">
+						<h1>Liste des Conseiller</h1>
+					</div>
+					<div class="col-md-6">
+					</div>
+					<div class="col-md-2">	
+						<button type="button" class="btn btn-primary" (click)="editConsPage()">New Conseiller</button>
+					</div>
+				</div>
+			</header>
+		</section>
+		<section class="main">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Prenom</th>
+						<th>Email</th>
+						<th>Pseudo</th>
+						<th>Mot de passe</th>
+						<th>Adresse</th>
+						<th>Telephone</th>
+						<th>Matricule</th>
+						<th>Admin</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let conseiller of conseillers">
+						<th scope="row">{{conseiller.id}}</th>
+						<td>{{conseiller.prenom}}</td>
+						<td>{{conseiller.email}}</td>
+						<td>{{conseiller.username}}</td>
+						<td>{{conseiller.pwd}}</td>
+						<td>{{conseiller.address}}</td>
+						<td>{{conseiller.numTel}}</td>
+						<td>{{conseiller.matricule}}</td>
+						<td>{{conseiller.administrator}}</td>
+						<td>
+							<button type="button" class="btn btn-danger" (click)="deleteCons(conseiller)">Delete</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+	</div>
+	
+</div>
+

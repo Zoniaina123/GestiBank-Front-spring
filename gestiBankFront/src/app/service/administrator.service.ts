@@ -19,6 +19,13 @@ export class AdministratorService {
     .map((res:Response)=>res.json())
     .catch((error:any)=>Observable.throw(error.json().error || 'Server error'));
   }
+  
+  findById(id: number): Observable<Administrator> {
+    return this.http.get(this.apiUrl+'/'+id)
+    .map((res:Response) => res.json())
+    .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+  }
+
 
 
   saveAdministrator(administrator: Administrator): Observable<Administrator> {

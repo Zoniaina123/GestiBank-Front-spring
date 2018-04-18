@@ -10,9 +10,9 @@ export class Conseiller extends User {
   administrator: Administrator;
   
   constructor(id: number, prenom: string, email: string, username: string, pwd: string,
-     address: string, numTel: string, matricule: number, dateDebut: Date,
+     address: string, numTel: string,Role: string, matricule: number, dateDebut: Date,
    clients: Client[], administrator: Administrator){
-    super(id, prenom, email, username, pwd, address, numTel);
+    super(id, prenom, email, username, pwd, address, numTel, Role);
     
     this.matricule = matricule;
     this.dateDebut = dateDebut;

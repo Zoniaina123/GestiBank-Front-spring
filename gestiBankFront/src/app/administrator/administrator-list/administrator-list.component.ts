@@ -2,6 +2,7 @@ import { AdministratorService } from '../../service/administrator.service';
 import { Component, OnInit } from '@angular/core';
 import {Administrator} from '../../modele/administrator';
 import { Router } from '@angular/router';
+import { log } from 'util';
 
 
 @Component({
@@ -12,10 +13,14 @@ import { Router } from '@angular/router';
 })
 export class AdministratorListComponent implements OnInit {
 private administrators: Administrator[];
+private administrator: Administrator;
 
+  curId: number;
   constructor(private router: Router, private administratorService: AdministratorService) { }
 
   ngOnInit() {
+    this.curId = parseInt(localStorage.getItem('id'));
+    console.log(this.curId);
     this.getAllAdmins();
   }
 
@@ -40,6 +45,12 @@ private administrators: Administrator[];
 //
 //    }
 //  }
+  
+  editConsPage(administrator: Administrator) {
+    if (administrator) {
+    this.router.navigate(['administrator/conseiller/create',this.curId]);
+  }
+  }
 
   deleteAdmin(administrator: Administrator) {
     if (administrator) {

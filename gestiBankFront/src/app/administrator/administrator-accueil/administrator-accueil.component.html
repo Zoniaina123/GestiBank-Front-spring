@@ -1,0 +1,55 @@
+<p>
+  administrator-accueil works!
+</p>
+
+
+<div class="row">
+	<div class="col">
+		
+		<section>
+			<header class="header">
+				<div class="row">
+					<div class="col-md-4">
+						<h1>Bonjour {{administrator?administrator.prenom:''}}</h1>
+					</div>
+					<div class="col-md-6">
+					</div>
+					<div class="col-md-2">	
+						<button type="button" class="btn btn-primary" (click)="redirectListConseiller()">Liste conseillers</button>
+					</div>
+				</div>
+			</header>
+		</section>
+		
+		<section class="main">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Type</th>
+						<th>Affectation</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let visitor of visitors">
+						<th scope="row">{{visitor.id}}</th>
+						<td>{{visitor.role}}</td>
+						<td>
+							<select [(ngModel)]="visitor.affectation">
+								<option value='0'>--Non affectee--</option>
+								<option [value]="c.id" *ngFor="let c of conseillers">{{c.username}}</option>
+							</select>
+						</td>
+						<td>
+							<button type="button" class="btn btn-success" (click)="affectVisitor(visitor)">Affecter</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		
+	</div>
+	
+</div>
+

@@ -1,9 +1,10 @@
 export class Auth {
   
-  UserU: string;
+  user: string;
   pwd: string;
   
-  constructor(UserU: string, pwd: string){
-    
+  constructor(user: string, pwd: string){
+    this.user=user;
+    this.pwd=pwd;
   }
 }

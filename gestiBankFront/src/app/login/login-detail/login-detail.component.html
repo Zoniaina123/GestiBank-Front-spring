@@ -1,0 +1,28 @@
+<p>
+  login-detail works!
+</p>
+
+
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<section>
+				<form novalidate [formGroup] = "userForm" (ngSubmit)="onSubmit()">
+					<fieldset>
+						<div class="form-group">
+							<label>Pseudo</label>
+							<input type="text" class="form-control" formControlName="user">
+						</div>
+						<div class="form-group">
+						<label>Mot de Passe</label>
+						<input type="password" class="form-control" formControlName="pwd">
+						</div>
+					</fieldset>
+					<button type="submit" class="btn btn-primary" [disabled]="!userForm.valid">Submit</button>
+					<pre>{{userForm.value | json}}</pre>
+				</form>
+			</section>
+		</div>
+	</div>
+</div>
+

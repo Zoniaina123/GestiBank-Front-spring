@@ -1,0 +1,59 @@
+<p>
+  conseiller-accueil works!
+</p>
+
+<div class="row">
+	<div class="col">
+		
+		<section>
+			<header class="header">
+				<div class="row">
+					<div class="col-md-4">
+						<h1>Bonjour {{conseiller?conseiller.prenom:''}}</h1>
+					</div>
+					<div class="col-md-6">
+					</div>
+					<div class="col-md-2">	
+						<button type="button" class="btn btn-primary" (click)="redirectListClient()">Liste clients</button>
+					</div>
+				</div>
+			</header>
+		</section>
+		
+		<section class="main">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Prenom</th>
+						<th>Adresse</th>
+						<th>Pseudo</th>
+						<th>Mot de passe</th>
+						<th>Nom</th>
+						<th>Nombre d'enfant</th>
+						<th>Situation</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let visitor of clientsVirtuel">
+						<th scope="row">{{visitor.id}}</th>
+						<td>{{visitor.prenom}}</td>
+						<td>{{visitor.address}}</td>
+						<td><input [(ngModel)]="visitor.username"></td>
+						<td><input [(ngModel)]="visitor.pwd"></td>
+						<td><input [(ngModel)]="visitor.nom"></td>
+						<td><input type="number" [(ngModel)]="visitor.nbEnfant"></td>
+						<td><input [(ngModel)]="visitor.situation"></td>
+						<td>
+							<button type="button" class="btn btn-success" (click)="createClient(visitor)">Nouveau client</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		
+	</div>
+	
+</div>
+

@@ -5,6 +5,7 @@ import { AdministratorRoutingModule } from './administrator-routing.module';
 import { AdministratorDetailComponent } from './administrator-detail/administrator-detail.component';
 import { AdministratorListComponent } from './administrator-list/administrator-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AdministratorAccueilComponent } from './administrator-accueil/administrator-accueil.component';
 
 @NgModule({
   imports: [
@@ -13,6 +14,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [AdministratorDetailComponent, AdministratorListComponent]
+  declarations: [AdministratorDetailComponent, AdministratorListComponent, AdministratorAccueilComponent]
 })
 export class AdministratorModule { }
