@@ -15,6 +15,7 @@ export class Client extends User {
      super(id, prenom, email, username, pwd, address, numTel, Role);
      this.nom = nom;
      this.nbEnfant = nbEnfant;
+     this.situation = situation;
      this.conseiller = conseiller;
      this.comptes = comptes;
    }

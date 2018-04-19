@@ -11,7 +11,7 @@ import {HttpModule} from '@angular/http';
 import { ModeleComponent } from './modele/modele.component';
 import { ServiceComponent } from './service/service.component';
 import { VisitorModule } from './visitor/visitor.module';
-
+import { ClientModule } from './client/client.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +26,7 @@ import { VisitorModule } from './visitor/visitor.module';
     ConseillerModule,
     LoginModule,
     VisitorModule,
+    ClientModule,
     HttpModule
   ],
   providers: [],

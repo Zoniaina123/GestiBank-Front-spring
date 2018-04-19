@@ -13,9 +13,12 @@ import { Router } from '@angular/router';
 export class ConseillerListComponent implements OnInit {
 private conseillers: Conseiller[];
 
+  curId: number;
+  
   constructor(private router: Router, private conseillerService: ConseillerService) { }
 
   ngOnInit() {
+    this.curId = parseInt(localStorage.getItem('id'));
     this.getAllCons();
   }
 
@@ -31,10 +34,10 @@ private conseillers: Conseiller[];
     );
   }
 
-  editConsPage(administrator: Administrator) {
-    if (administrator) {
-    this.router.navigate(['administrator/conseiller/create',administrator.id]);
-  }
+
+  
+  editConsPage() {
+    this.router.navigate(['administrator/conseiller/create',this.curId]);
   }
 
 //  editUserPage(admin: Admin){

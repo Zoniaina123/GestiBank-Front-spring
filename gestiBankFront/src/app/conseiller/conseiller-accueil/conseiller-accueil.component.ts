@@ -20,9 +20,10 @@ export class ConseillerAccueilComponent implements OnInit {
 private conseiller: Conseiller;
 private visitors: Visitor[];
 private clientsVirtuel: Client[];
-  7
+ 
   curIdC: number;
-  constructor(private router: Router, private conseillerService: ConseillerService,private visitorService: VisitorService,
+  curId: number;
+  constructor(private router: Router, private conseillerService: ConseillerService, private visitorService: VisitorService,
   private clientService: ClientService) { }
 
   ngOnInit() {
@@ -53,7 +54,8 @@ private clientsVirtuel: Client[];
     this.visitorService.findAllAffectedVisitor(this.curIdC).subscribe(
       visitors => {
         this.visitors=visitors;
-        for (let i = 0; i < visitors.length; i++) {
+        if(visitors){
+          for (let i = 0; i < visitors.length; i++) {
           let visitor = visitors[i];
           this.clientsVirtuel.push(new Client(visitor.id,
                                visitor.prenom,
@@ -66,6 +68,7 @@ private clientsVirtuel: Client[];
                               '', 0, '',
                               null,
                               null))
+          }
         }
       },
       err=> {
@@ -80,13 +83,10 @@ private clientsVirtuel: Client[];
   }
 
   
-  editConsPage(administrator: Administrator) {
-    if (administrator) {
-    this.router.navigate(['administrator/conseiller/create',this.curIdC]);
-  }
-  }
+  
 
   createClient(c: Client){
+    console.log(c.situation);
     let newClient=new Client(null,
                                c.prenom,
                                c.email,
@@ -97,9 +97,14 @@ private clientsVirtuel: Client[];
                                 null,
                                 c.nom, c.nbEnfant, c.situation,
                                 null,null);
+    console.log(newClient);
     this.clientService.saveClient(this.curIdC,c.id,newClient).subscribe(value=>{this.getAllAffected(this.curIdC)});
 
   
+  }
+  
+  AccueilPage() {
+    this.router.navigate(['']);
   }
   
 

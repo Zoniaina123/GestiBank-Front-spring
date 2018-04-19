@@ -81,4 +81,12 @@ private visitors: Visitor[];
     );
   }
   
+  AccueilPage() {
+    this.router.navigate(['']);
+  }
+  
+  redirectConsPage() {
+    this.router.navigate(['/administrator/conseiller']);
+  }
+  
 }

@@ -10,7 +10,7 @@ const routes: Routes = [
   {path: 'administrator', component : AdministratorListComponent},
 {path: 'administrator/accueil', component : AdministratorAccueilComponent},
   {path: 'administrator/create', component : AdministratorDetailComponent},
-  {path: 'administrator/:id/conseiller/create', component : ConseillerDetailComponent}
+  {path: 'administrator/conseiller/create/:id', component : ConseillerDetailComponent}
 ];
 
 

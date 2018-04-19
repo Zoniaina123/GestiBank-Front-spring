@@ -21,11 +21,13 @@ export class ConseillerDetailComponent implements OnInit {
 
   consForm:FormGroup;
 
+  curId: number;
   private sub: any;
 
   constructor(private route:ActivatedRoute, private router: Router, private conseillerService: ConseillerService) { }
 
   ngOnInit() {
+    this.curId = parseInt(localStorage.getItem('id'));
     this.sub = this.route.params.subscribe(params=> {
       this.idAdmin = params['id'];
     });
@@ -62,7 +64,7 @@ export class ConseillerDetailComponent implements OnInit {
                               null,
                               null,
                               null);
-    this.conseillerService.saveConseiller(this.idAdmin,conseiller).subscribe(value=>this.redirectConsPage());
+    this.conseillerService.saveConseiller(this.curId,conseiller).subscribe(value=>this.redirectConsPage());
 
   }
 

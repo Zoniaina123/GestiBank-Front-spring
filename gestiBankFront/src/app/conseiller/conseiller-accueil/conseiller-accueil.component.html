@@ -15,6 +15,7 @@
 					</div>
 					<div class="col-md-2">	
 						<button type="button" class="btn btn-primary" (click)="redirectListClient()">Liste clients</button>
+						<button type="button" class="btn btn-primary" (click)="AccueilPage()">Deconnexion</button>
 					</div>
 				</div>
 			</header>
@@ -44,7 +45,14 @@
 						<td><input [(ngModel)]="visitor.pwd"></td>
 						<td><input [(ngModel)]="visitor.nom"></td>
 						<td><input type="number" [(ngModel)]="visitor.nbEnfant"></td>
-						<td><input [(ngModel)]="visitor.situation"></td>
+						<td>
+							<select [(ngModel)]="visitor.situation">
+								<option value="CELIBATAIRE">CELIBATAIRE</option>
+								<option value="MARIE(E)">MARIE(E)</option>
+								<option value="PACSE(E)">PACSE(E)</option>
+								<option value="VEUF(VE)">VEUF(VE)</option>
+							</select>
+						</td>
 						<td>
 							<button type="button" class="btn btn-success" (click)="createClient(visitor)">Nouveau client</button>
 						</td>
