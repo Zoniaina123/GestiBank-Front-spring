@@ -38,7 +38,7 @@ export class VisitorDetailComponent implements OnInit {
                               null,
                               this.visitorForm.controls['address'].value,
                               this.visitorForm.controls['numTel'].value, null, null);
-    this.visitorService.save(visitor).subscribe(value=>this.redirectAccueil());
+    this.visitorService.save(visitor).subscribe(value=>this.AccueilPage());
 
   }
 
@@ -46,6 +46,8 @@ export class VisitorDetailComponent implements OnInit {
     // this.router.navigate(['/user']);
   }
   
-  redirectAccueil(){}
+  AccueilPage() {
+    this.router.navigate(['']);
+  }
 
 }
